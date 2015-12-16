@@ -3,8 +3,8 @@ import java.util.Scanner;
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
  * 
- * @author @gcschmit
- * @version 19 July 2014
+ * @author @gcschmit and @ncgardiner
+ * @version 15 July 2015
  */
 public class RadarViewer
 {
@@ -19,8 +19,10 @@ public class RadarViewer
         final int ROWS = 100;
         final int COLS = 100;
         Radar radar = new Radar(ROWS, COLS);
+        
         System.out.print("Enter the percentage of false positives (.05=5%) : ");
         radar.setNoiseFraction(in.nextDouble());
+        
         System.out.print("Enter the monster's row: ");
         int row = in.nextInt();
         System.out.print("Enter the monster's column: ");
@@ -46,8 +48,8 @@ public class RadarViewer
         //  component.
         frame.setVisible(true);
         
-        // perform 100 scans of the radar wiht a slight pause between each
-        // after each scan, instruct the Java Run-Time to redraw the window
+        // perform the specified amound of scans of the radar with a slight pause  
+        // between each scan, instruct the Java Run-Time to redraw the window
         for(int i = 0; i < scans; i++)
         {
             Thread.sleep(100); // sleep 100 milliseconds (1/10 second)
